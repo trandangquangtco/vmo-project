@@ -6,42 +6,29 @@ const projectSchema = new Schema({
   projectType: { type: String, unique: true, required: true },
   describe: String,
   important: { type: String, default: 1 },
-  active: { type: Boolean, default: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-}, { collection: 'projectType', timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } })
+  active: { type: Boolean, default: true }
+}, { collection: 'projectType', timestamps: true })
 
 const techSchema = new Schema({
   techStack: { type: String, unique: true, required: true },
   describe: String,
-  active: { type: Boolean, default: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-}, { collection: 'techStack' })
+  active: { type: Boolean, default: true }
+}, { collection: 'techStack', timestamps: true })
 
 const statusSchema = new Schema({
   status: { type: String, unique: true, required: true },
   describe: String,
-  active: { type: Boolean, default: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-}, { collection: 'status' })
+  active: { type: Boolean, default: true }
+}, { collection: 'status', timestamps: true })
 
 const customerSchema = new Schema({
   customer: { type: String, unique: true, required: true },
   describe: String,
   important: { type: String, default: 1 },
-  active: { type: Boolean, default: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-}, { collection: 'customer' })
+  active: { type: Boolean, default: true }
+}, { collection: 'customer', timestamps: true })
 
-projectSchema.index({ '$**': 'regex' })
-
-projectSchema.pre('save', function (next) {
-  this.updatedAt = Date.now()
-  return next()
-})
+// projectSchema.index({ '$**': 'regex' })
 
 const projectType = mongoose.model('projectType', projectSchema)
 const techStack = mongoose.model('techStack', techSchema)

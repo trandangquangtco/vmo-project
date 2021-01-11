@@ -1,0 +1,192 @@
+[{
+  "_id": {
+    "$oid": "5febea2ee585db2b4cc97d1c"
+  },
+  "projectType": [
+    {
+      "$oid": "5ff855a7172040113026ab25"
+    },
+    {
+      "$oid": "5ff85277a8f78d2a802c176d"
+    }
+  ],
+  "status": [
+    {
+      "$oid": "5feb2b242626c7107400cd18"
+    },
+    {
+      "$oid": "5feb2a4b2626c7107400cd17"
+    },
+    {
+      "$oid": "5feb2ce4146f370610915174"
+    }
+  ],
+  "techStack": [
+    {
+      "$oid": "5febe669a6619423bc8d2e9a"
+    },
+    {
+      "$oid": "5feb3e1b02507b13bceb5350"
+    }
+  ],
+  "staff": [
+    {
+      "$oid": "5febe6dda6619423bc8d2e9b"
+    },
+    {
+      "$oid": "5febe73da6619423bc8d2e9e"
+    }
+  ],
+  "projectName": "Data analist",
+  "information": "build a program to analist data",
+  "center": {
+    "$oid": "5febe622a6619423bc8d2e99"
+  },
+  "createdAt": {
+    "$date": "2021-01-05T03:49:01.622Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-05T03:51:19.650Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5febea9ef997f02018d3a902"
+  },
+  "projectType": [
+    {
+      "$oid": "5ff855a7172040113026ab23"
+    }
+  ],
+  "status": [
+    {
+      "$oid": "5feb2b242626c7107400cd18"
+    },
+    {
+      "$oid": "5feb2a4b2626c7107400cd17"
+    },
+    {
+      "$oid": "5feb2ce4146f370610915174"
+    }
+  ],
+  "techStack": [
+    {
+      "$oid": "5febe669a6619423bc8d2e9a"
+    },
+    {
+      "$oid": "5feb3e1b02507b13bceb5350"
+    }
+  ],
+  "staff": [
+    {
+      "$oid": "5febe6dda6619423bc8d2e9b"
+    },
+    {
+      "$oid": "5febe73da6619423bc8d2e9e"
+    }
+  ],
+  "information": "build a program to analist data",
+  "projectName": "Web selling",
+  "center": {
+    "$oid": "5febe622a6619423bc8d2e99"
+  },
+  "createdAt": {
+    "$date": "2021-01-08T12:39:19.833Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-08T12:40:30.277Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5febec5819d3c807ec73889c"
+  },
+  "projectType": [
+    {
+      "$oid": "5ff855a7172040113026ab26"
+    }
+  ],
+  "status": [
+    {
+      "$oid": "5feb2b242626c7107400cd18"
+    },
+    {
+      "$oid": "5feb2a4b2626c7107400cd17"
+    },
+    {
+      "$oid": "5feb2ce4146f370610915174"
+    }
+  ],
+  "techStack": [
+    {
+      "$oid": "5febe669a6619423bc8d2e9a"
+    },
+    {
+      "$oid": "5feb3e1b02507b13bceb5350"
+    }
+  ],
+  "staff": [
+    {
+      "$oid": "5febe6dda6619423bc8d2e9b"
+    },
+    {
+      "$oid": "5febe73da6619423bc8d2e9e"
+    }
+  ],
+  "projectName": "Hospitally",
+  "information": "manage list patient",
+  "center": {
+    "$oid": "5febe622a6619423bc8d2e99"
+  },
+  "createdAt": {
+    "$date": "2021-01-08T12:52:55.667Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-08T12:52:55.667Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fec9884412d9e2110ae74f0"
+  },
+  "projectType": [
+    {
+      "$oid": "5ff85277a8f78d2a802c176d"
+    }
+  ],
+  "status": [
+    "5feb2b242626c7107400cd18",
+    {
+      "$oid": "5feb2a4b2626c7107400cd17"
+    },
+    "5feb2ce4146f370610915174"
+  ],
+  "techStack": [
+    {
+      "$oid": "5febe669a6619423bc8d2e9a"
+    },
+    {
+      "$oid": "5feb3e1b02507b13bceb5350"
+    }
+  ],
+  "staff": [
+    {
+      "$oid": "5febe6dda6619423bc8d2e9b"
+    },
+    {
+      "$oid": "5febe73da6619423bc8d2e9e"
+    }
+  ],
+  "projectName": "bbbb analist1",
+  "information": "build a program to analist data",
+  "center": {
+    "$oid": "5febe622a6619423bc8d2e99"
+  },
+  "createdAt": {
+    "$date": "2021-01-08T12:52:55.667Z"
+  },
+  "updatedAt": {
+    "$date": "2021-01-08T12:52:55.667Z"
+  },
+  "__v": 0
+}]

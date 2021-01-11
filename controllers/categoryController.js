@@ -22,10 +22,10 @@ const findReg = async (req, res) => {
 
 const findType = async (req, res) => {
   try {
-    const find = await readService(projectType, req.query)
+    const find = await readService(projectType, req.body)
     res.json(success('get', 'project', find))
   } catch (error) {
-    res.status(500).json(fail(error))
+    res.status(500).json(fail(error.message))
   }
 }
 
@@ -83,6 +83,15 @@ const findTech = async (req, res) => {
   }
 }
 
+const findOneTech = async (req, res) => {
+  try {
+    const find = await readOneService(techStack, req.params.id)
+    res.json(success('get', 'tech stack', find))
+  } catch (error) {
+    res.json(fail(error.message))
+  }
+}
+
 const updateTech = async (req, res) => {
   try {
     const update = await updateService(techStack, req.params.id, req.body)
@@ -124,6 +133,15 @@ const findStatus = async (req, res) => {
     res.json(success('get', 'status', find))
   } catch (error) {
     res.status(500).json(fail(error))
+  }
+}
+
+const findOneStatus = async (req, res) => {
+  try {
+    const find = await readOneService(status, req.params.id)
+    res.json(success('get', 'status', find))
+  } catch (error) {
+    res.json(fail(error.message))
   }
 }
 
@@ -172,6 +190,14 @@ const findCustomer = async (req, res) => {
   }
 }
 
+const findOneCustomer = async (req, res) => {
+  try {
+    const find = await readOneService(customer, req.params.id)
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 const updateCustomer = async (req, res) => {
   try {
     const update = await updateService(customer, req.params.id, req.body)
@@ -196,7 +222,7 @@ const deleteCustomer = async (req, res) => {
 
 export {
   createType, findType, updateType, deleteType, findReg, findOneType,
-  createTech, findTech, updateTech, deleteTech,
-  createStatus, findStatus, updateStatus, deleteStatus,
-  createCustomer, findCustomer, updateCustomer, deleteCustomer
+  createTech, findTech, findOneTech, updateTech, deleteTech,
+  createStatus, findStatus, findOneStatus, updateStatus, deleteStatus,
+  createCustomer, findCustomer, findOneCustomer, updateCustomer, deleteCustomer
 }

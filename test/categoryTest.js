@@ -300,7 +300,7 @@ describe('unit test 3000', () => {
 
   describe('delete customer', () => {
     it('delete success', done => {
-      chai.request(app).delete('/category/techStacks/' + customerId).set({ token: token }).end((_err, res) => {
+      chai.request(app).delete('/category/customers/' + customerId).set({ token: token }).end((_err, res) => {
         res.should.have.status(200)
         res.body.should.be.a('object')
         res.body.data.should.have.property('ok').eql(1)

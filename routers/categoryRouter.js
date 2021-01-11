@@ -27,6 +27,15 @@ router.get('/status', category.findStatus)
 router.put('/status/:id', category.updateStatus)
 router.delete('/status/:id', category.deleteStatus)
 
+router.post('/aggregate', async (req, res) => {
+  try {
+    const read = await projectType.aggregate([{ projectType: req.body.projectType }])
+    res.json(read)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 router.get('/time', async (req, res) => {
   try {
     const find = await projectType.find({ updatedAt: { $gte: req.query.updatedAt } })
@@ -39,7 +48,7 @@ router.get('/time', async (req, res) => {
 router.post('/search', async (req, res) => {
   try {
     const body = req.body.search
-    const find = await projectType.find({ $text: { $search: new RegExp(body) } })
+    const find = await projectType.find({ $text: { $search: body } })
     res.json(find)
   } catch (error) {
     console.log(error)

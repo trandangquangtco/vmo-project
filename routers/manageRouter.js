@@ -47,7 +47,7 @@ router.post('/populate-staff', (req, res) => {
 })
 
 router.post('/populate-project', (req, res) => {
-  project.find().populate('techStack', 'techStack describe -_id').populate('staff', 'staffName')
+  project.find().populate('techStack', 'techStack describe -_id').populate('staff', 'staffName').populate('status').populate('projectType')
     .then(data => res.json(data))
 })
 

@@ -1,5 +1,5 @@
-const readService = (model, query) => {
-  return model.find(query)
+const readService = (model, query, perPage, page) => {
+  return model.find(query).limit(perPage).skip((perPage * page) - perPage).lean()
 }
 
 const readOneService = (model, params) => {

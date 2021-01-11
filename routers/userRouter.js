@@ -1,6 +1,7 @@
 import express from 'express'
 import { createAdmin } from '../controllers/manageController.js'
 import { refresh, signin } from '../controllers/loginController.js'
+import { admin } from '../models/manageModel.js'
 
 const router = express.Router()
 
