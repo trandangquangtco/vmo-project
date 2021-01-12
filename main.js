@@ -25,6 +25,7 @@ const logger = winston.createLogger({
   ]
 })
 
+// mongoose.connect('mongodb://localhost:27017/botup-cms-api', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
 mongoose.connect('mongodb://localhost:27017/vmoprj', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
 
 app.use(bodyParser.urlencoded({ extended: false }))

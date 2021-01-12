@@ -28,7 +28,7 @@ const customerSchema = new Schema({
   active: { type: Boolean, default: true }
 }, { collection: 'customer', timestamps: true })
 
-// projectSchema.index({ '$**': 'regex' })
+projectSchema.index({ '$**': 'text' })
 
 const projectType = mongoose.model('projectType', projectSchema)
 const techStack = mongoose.model('techStack', techSchema)

@@ -1,7 +1,10 @@
 import { admin, center, project, staff } from '../models/manageModel.js'
-import { createService, deleteService, readOneService, readService, updateService } from '../services/service.js'
+import { createService, deleteService, readCenterPopulate, readOneService, readProjectPopulate, readService, readStaffPopulate, updateService } from '../services/service.js'
 import { success, fail } from '../helpers/response.js'
 
+/// ///////////////////////////
+/// ///////Admin Controller////
+/// ///////////////////////////
 const createAdmin = async (req, res) => {
   try {
     const create = await admin.create(req.body)
@@ -29,6 +32,33 @@ const readAdmin = async (req, res) => {
   }
 }
 
+const updateAdmin = async (req, res) => {
+  try {
+    const update = await updateService(admin, req.params.id, req.body)
+    res.json(success('put', 'admin', update))
+  } catch (error) {
+    res.json(fail(error.message))
+  }
+}
+
+const deleteAdmin = async (req, res) => {
+  try {
+    const remove = await deleteService(admin, req.params.id)
+    res.json(success('delete', 'admin', remove))
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
+/// ///////////////////////////////
+/// ///////End Admin Controller////
+/// ///////////////////////////////
+
+/// ---------------------------------------------------------------------///
+
+/// ///////////////////////////
+/// //////Staff Controller/////
+/// ///////////////////////////
 const createStaff = async (req, res) => {
   try {
     const create = await createService(staff, req.body)
@@ -44,6 +74,24 @@ const readStaff = async (req, res) => {
     res.json(success('get', 'staff', read))
   } catch (error) {
     res.status(500).json(fail(error))
+  }
+}
+
+const readStaffFull = async (req, res) => {
+  try {
+    const read = await readStaffPopulate(req.query)
+    res.json(success('get', 'staff', read))
+  } catch (error) {
+    res.json(fail(error.message))
+  }
+}
+
+const readOneStaff = async (req, res) => {
+  try {
+    const read = await readOneService(staff, req.params.id)
+    res.json(success('get', 'staff', read))
+  } catch (error) {
+    res.json(fail(error.message))
   }
 }
 
@@ -65,6 +113,15 @@ const deleteStaff = async (req, res) => {
   }
 }
 
+/// ///////////////////////////////
+/// /////End Staff Controller//////
+/// ///////////////////////////////
+
+/// ---------------------------------------------------------------------///
+
+/// ///////////////////////////
+/// //////Center Controller////
+/// ///////////////////////////
 const createCenter = async (req, res) => {
   try {
     const create = await createService(center, req.body)
@@ -80,6 +137,24 @@ const readCenter = async (req, res) => {
     res.json(success('get', 'center', read))
   } catch (error) {
     res.status(500).json(fail(error))
+  }
+}
+
+const readCenterFull = async (req, res) => {
+  try {
+    const read = await readCenterPopulate(req.query)
+    res.json(success('get', 'center', read))
+  } catch (error) {
+    res.json(fail(error.message))
+  }
+}
+
+const readOneCenter = async (req, res) => {
+  try {
+    const read = await readOneService(center, req.params.id)
+    res.json(success('get', 'center', read))
+  } catch (error) {
+    res.json(fail(error.message))
   }
 }
 
@@ -101,6 +176,15 @@ const delCenter = async (req, res) => {
   }
 }
 
+/// ///////////////////////////////
+/// //////End Center Controller////
+/// ///////////////////////////////
+
+/// ---------------------------------------------------------------------///
+
+/// ///////////////////////////
+/// //////Project Controller///
+/// ///////////////////////////
 const createProject = async (req, res) => {
   try {
     const create = await createService(project, req.body)
@@ -116,6 +200,24 @@ const readProject = async (req, res) => {
     res.json(success('get', 'project', read))
   } catch (error) {
     res.status(500).json(fail(error))
+  }
+}
+
+const readProjectFull = async (req, res) => {
+  try {
+    const read = await readProjectPopulate(req.query)
+    res.json(success('get', 'project', read))
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
+const readOneProject = async (req, res) => {
+  try {
+    const read = await readOneService(project, req.params.id)
+    res.json(success('get', 'project', read))
+  } catch (error) {
+    res.json(fail(error.message))
   }
 }
 
@@ -137,9 +239,13 @@ const delProject = async (req, res) => {
   }
 }
 
+/// ///////////////////////////////
+/// //////End Project Controller///
+/// ///////////////////////////////
+
 export {
-  createAdmin, readAdmin, readOneAdmin,
-  createStaff, readStaff, updateStaff, deleteStaff,
-  createCenter, readCenter, updateCenter, delCenter,
-  createProject, readProject, updateProject, delProject
+  createAdmin, readAdmin, readOneAdmin, updateAdmin, deleteAdmin,
+  createStaff, readStaff, readStaffFull, readOneStaff, updateStaff, deleteStaff,
+  createCenter, readCenter, readCenterFull, readOneCenter, updateCenter, delCenter,
+  createProject, readProject, readProjectFull, readOneProject, updateProject, delProject
 }
